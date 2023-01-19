@@ -1,18 +1,18 @@
-import { NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Login from './components/Login.js'
 
 function App() {
 
-
   return (
-    <div className="App">
-      <nav>
-        <NavLink to="/Login">Login</NavLink>
-      </nav>
-      <header className="App-header">
-        <h1>Hej Hej</h1>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={ <Login /> } />
+          {/* <Route path="/profile" element={ <Profile /> } /> */}
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
