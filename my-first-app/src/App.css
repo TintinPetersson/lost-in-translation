@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.btn-primary{
+  background-color: #282c34;
+  border: 1px solid black;
+  transition: ease-in-out .3s;
+}
+.btn-primary:hover{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  letter-spacing: 3px;
+}
