@@ -1,12 +1,13 @@
 import { useForm } from 'react-hook-form';
 import { loginUser } from '../../api/User'
 
+// Username validation rules
 const usernameConfig = {
     required: true,
     minLength: 2
 }
 
-
+// User login logic 
 const LoginForm = () => {
     const {
         register,
@@ -14,13 +15,14 @@ const LoginForm = () => {
         formState: { errors }
     } = useForm();
 
+    // 
     const onSubmit = async ({ username }) => {
         const [error, user] = await loginUser(username)
         console.log("Error: ", error)
         console.log("User: ", user)
     }
 
-
+    // Displays a message if user input is invalid
     const errorMessage = (() => {
         if (!errors.username) {
             return null;
@@ -31,7 +33,7 @@ const LoginForm = () => {
         if (errors.username.type === "minLength") {
             return <span className="text-danger">Username is too short.</span>
         }
-    })()
+    })();
 
 
 

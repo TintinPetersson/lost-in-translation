@@ -2,7 +2,7 @@ import { createHeaders } from "./ApiIndex";
 const apiUrl = process.env.REACT_APP_API_URL;
 
 
-// read form api
+// read users form api
 export const checkForUser = async (username) => {
     try {
         const response = await fetch(`${apiUrl}?username=${username}`);
@@ -20,7 +20,7 @@ export const checkForUser = async (username) => {
 }
 
 
-// Write to api
+// Write user to api
 export const createUser = async (username) => {
     try {
         const response = await fetch(apiUrl, {

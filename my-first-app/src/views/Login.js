@@ -3,7 +3,6 @@ import LoginForm from "../components/Login/LoginForm"
 
 const Login = () => {
 
-
     return (
         <div className="container pt-5">
             <div className="row justify-content-center text-center">
