@@ -1,18 +1,11 @@
-const apiUrl = process.env.REACT_APP_API_URL;
 import { createHeaders } from "./ApiIndex";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 
 // read form api
 export const checkForUser = async (username) => {
     try {
-        const response = await fetch(`${apiUrl}?username=${username}`, {
-            method: "POST",
-            headers: createHeaders(),
-            body: JSON.stringify({
-                username,
-                translations: []
-            })
-        });
+        const response = await fetch(`${apiUrl}?username=${username}`);
         if (!response.ok) {
             throw new Error("Could not complete request!");
         }
@@ -30,7 +23,14 @@ export const checkForUser = async (username) => {
 // Write to api
 export const createUser = async (username) => {
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: createHeaders(),
+            body: JSON.stringify({
+                username,
+                translations: []
+            })
+        });
         if (!response.ok) {
             throw new Error("Could not create user with username: " + username);
         }
@@ -44,16 +44,16 @@ export const createUser = async (username) => {
 }
 
 
-// check if user exist!
+// Check if user exist!
 export const loginUser = async (username) => {
-    // chack if user does exist
+    // Check if user does exist
     const [checkError, user] = await checkForUser(username);
 
     if (checkError !== null) {
         return [checkError, null];
     }
 
-    if (username.length > 0) {
+    if (user.length > 0) {
         return [null, user.pop()];
     }
 

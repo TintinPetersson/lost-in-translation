@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { loginUser } from '../../api/User'
 
 const usernameConfig = {
     required: true,
@@ -13,8 +14,10 @@ const LoginForm = () => {
         formState: { errors }
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data.username);
+    const onSubmit = async ({ username }) => {
+        const [error, user] = await loginUser(username)
+        console.log("Error: ", error)
+        console.log("User: ", user)
     }
 
 
