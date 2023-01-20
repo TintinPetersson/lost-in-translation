@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { loginUser } from '../../api/User'
-import { storageSave } from '../../utils/storage';
+import { storageSave } from '../../utils/Storage';
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '../../context/UserContext'
+import { STORAGE_KEY_USER } from '../../const/StorageKeys';
 
 // Username validation rules
 const usernameConfig = {
@@ -25,7 +26,7 @@ const LoginForm = () => {
     // Side Effecs
     useEffect(() => {
         if (user !== null) {
-            navigate("translations")
+            navigate("translation")
         }
     }, [user, navigate])
 
@@ -38,12 +39,12 @@ const LoginForm = () => {
             setApiError(error)
         }
         if (userResponse !== null) {
-            storageSave("translation-user", userResponse)
+            storageSave(STORAGE_KEY_USER, userResponse)
             setUser(userResponse)
         }
         setLoading(false);
     }
-    // Render Function
+
     // Displays a message if user input is invalid
     const errorMessage = (() => {
         if (!errors.username) {
@@ -59,18 +60,18 @@ const LoginForm = () => {
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <fieldset>
+                <div className="input-group pb-5">
                     <input
-                        className="form-control"
+                        className="form-control fw-bold"
                         type="text"
                         placeholder="What's your name?"
                         {...register("username", usernameConfig)} />
-                    <br></br>
-                    {errorMessage}
-                </fieldset>
-                <br></br>
-
-                <button className="btn btn-primary" type="submit" disabled={loading}>Submit</button>
+                    <div className="input-group-append">
+                        <button className="btn fw-bold" type="submit" disabled={loading}><i className="bi bi-caret-right-fill"></i>
+                        </button>
+                    </div>
+                </div>
+                {errorMessage}
 
                 {loading && <p>Logging in...</p>}
                 {apiError && <p>{apiError}</p>}

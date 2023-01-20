@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  color: white;
 }
 
 .App-logo {
@@ -47,4 +48,39 @@
   color: black;
   border: 1px solid black;
   letter-spacing: 3px;
+}
+
+.card{
+  background-color: #34373D;
+  border-top: 4px solid orange;
+  color: white;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card input{                                                      /* TODO */
+  background-color: #43474D;
+  border: none;
+  color: white;
+  border-radius: 20px; 
+  transition: ease-in-out .2s;
+}
+
+.card input:focus{
+  background-color: #282c34;
+  border:none;
+  color: white;
+  outline: none;
+}
+
+.bi-caret-right-fill{
+  color: orange;
+}
+
+.input-group {
+  position: relative;
+}
+.input-group .btn{
+  position: absolute;
+  right: 0;
+  top: 0;
 }
