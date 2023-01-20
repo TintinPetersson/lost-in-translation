@@ -1,23 +1,50 @@
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { loginUser } from '../../api/User'
+import { storageSave } from '../../utils/storage';
+import { useNavigate } from 'react-router-dom'
+import { useUser } from '../../context/UserContext'
 
+// Username validation rules
 const usernameConfig = {
     required: true,
     minLength: 2
 }
 
-
+// User login logic 
 const LoginForm = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors }
-    } = useForm();
+    //Hooks
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { user, setUser } = useUser()
+    const navigate = useNavigate()
 
-    const onSubmit = (data) => {
-        console.log(data.username);
+    // Local state
+    const [loading, setLoading] = useState(false)
+    const [apiError, setApiError] = useState(null)
+
+    // Side Effecs
+    useEffect(() => {
+        if (user !== null) {
+            navigate("translations")
+        }
+    }, [user, navigate])
+
+    // Event Handlers
+    const onSubmit = async ({ username }) => {
+
+        setLoading(true);
+        const [error, userResponse] = await loginUser(username)
+        if (error !== null) {
+            setApiError(error)
+        }
+        if (userResponse !== null) {
+            storageSave("translation-user", userResponse)
+            setUser(userResponse)
+        }
+        setLoading(false);
     }
-
-
+    // Render Function
+    // Displays a message if user input is invalid
     const errorMessage = (() => {
         if (!errors.username) {
             return null;
@@ -28,11 +55,7 @@ const LoginForm = () => {
         if (errors.username.type === "minLength") {
             return <span className="text-danger">Username is too short.</span>
         }
-    })()
-
-
-
-    console.log(errors);
+    })();
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -47,7 +70,10 @@ const LoginForm = () => {
                 </fieldset>
                 <br></br>
 
-                <button className="btn btn-primary" type="submit">Submit</button>
+                <button className="btn btn-primary" type="submit" disabled={loading}>Submit</button>
+
+                {loading && <p>Logging in...</p>}
+                {apiError && <p>{apiError}</p>}
             </form>
         </>
     )
