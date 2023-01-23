@@ -1,12 +1,14 @@
 import withAuth from "../hoc/withAuth"
-import TranslationsButton from "../components/Translations/TranslationsButton"
+import TranslationWindow from "../components/Translations/TranslationsWindow"
+import TranslationForm from "../components/Translations/TranslationForm"
 
 const Translation = () => {
     return (
         <>
             <h1>Translation page</h1>
             <section id="translations-options">
-                <TranslationsButton word="Sign" images="img/w.png" />
+                <TranslationForm />
+                <TranslationWindow />
             </section>
         </>
     )
