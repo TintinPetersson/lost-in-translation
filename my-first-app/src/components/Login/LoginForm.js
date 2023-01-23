@@ -23,7 +23,7 @@ const LoginForm = () => {
     const [loading, setLoading] = useState(false)
     const [apiError, setApiError] = useState(null)
 
-    // Side Effecs
+    // Side Effects
     useEffect(() => {
         if (user !== null) {
             navigate("translation")

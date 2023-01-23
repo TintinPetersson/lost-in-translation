@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 
 
 // Transfer to the profile page where users 10 prior translations are displayed
-const TranslationsButton = () => {
+const TranslationsButton = ( {message}) => {
     return (
         <>
             <Button variant="Secondary">
@@ -12,6 +12,7 @@ const TranslationsButton = () => {
         </>
     )
 }
+
 
 // Translates the user inputs
 // Render the the translated massage that the user inputs
@@ -29,7 +30,7 @@ const TranslateWordToSigns = ({word}) => {
     );
 }
 
-const translationWindow = () => {
+const translationWindow = ({message}) => {
     return (
         <>
             <div className="container pt-5">
@@ -39,7 +40,7 @@ const translationWindow = () => {
                             <div className="card-body">
                                 <div className="container-xl primary">
                                     <div className="char">
-                                        {<TranslateWordToSigns word="3453g123efeg" />}
+                                        {<TranslateWordToSigns word={message} />}
                                     </div>
                                     <TranslationsButton />
 
