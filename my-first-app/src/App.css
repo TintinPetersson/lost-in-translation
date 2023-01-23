@@ -52,12 +52,12 @@
 
 .card{
   background-color: #34373D;
-  border-top: 4px solid orange;
+  border-top: 4px solid #FFB800;
   color: white;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.card input{                                                      /* TODO */
+.card input{
   background-color: #43474D;
   border: none;
   color: white;
@@ -73,7 +73,7 @@
 }
 
 .bi-caret-right-fill{
-  color: orange;
+  color: #FFB800
 }
 
 .input-group {
@@ -84,4 +84,29 @@
   right: 0;
   top: 0;
   z-index: 200;
+}
+
+#navbar{
+  background-color: #34373D !important;
+  border-bottom: 2px solid #FFB800
+}
+
+.nav-link{
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.bi-person-circle{
+  font-style: normal !important;
+  color: #ffc400;
+}
+
+.dd-item{
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+.navbar-brand {
+  font-size: 28px;
+  font-weight: 700;
 }
