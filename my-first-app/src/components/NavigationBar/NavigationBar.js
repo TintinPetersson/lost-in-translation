@@ -33,27 +33,8 @@ const NavigationBar = () => {
                                 <NavLink className="nav-link text-dark dd-item" to="/profile">Profile</NavLink>
                                 <NavLink className="nav-link text-dark dd-item" onClick={handleLogoutClick}>Log Out</NavLink>
                             </NavDropdown>
-                            {/* 
-                            <div class="dropdown">
-                                <button
-                                    class="btn btn-primary dropdown-toggle hidden-arrow"
-                                    type="button"
-                                    id="dropdownMenuButton2"
-                                    data-mdb-toggle="dropdown"
-                                    aria-expanded="false"
-                                >
-                                    <i class="bi bi-person-circle">Profile</i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                    <li><a class="dropdown-item" href="#"> <i class="fas fa-user-alt pe-2"></i>My Profile</a></li>
-                                    <li><a class="dropdown-item" href="#"> <i class="fas fa-cog pe-2"></i>Settings</a></li>
-                                    <li><a class="dropdown-item" href="#"> <i class="fas fa-door-open pe-2"></i>Logout</a></li>
-                                </ul>
-                            </div> */}
                         </Nav>
-
                     }
-
                 </Navbar.Collapse>
             </Container>
         </Navbar>
