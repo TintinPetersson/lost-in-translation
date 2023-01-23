@@ -29,7 +29,7 @@ const NavigationBar = () => {
                         user !== null &&
                         <Nav className="ms-auto">
                             <NavLink className="nav-link" to="/translation">Translations</NavLink>
-                            <NavDropdown title={<i class="bi bi-person-circle"> {user.username} </i>}>
+                            <NavDropdown title={<i className="bi bi-person-circle"> {user.username} </i>}>
                                 <NavLink className="nav-link text-dark dd-item" to="/profile">Profile</NavLink>
                                 <NavLink className="nav-link text-dark dd-item" onClick={handleLogoutClick}>Log Out</NavLink>
                             </NavDropdown>

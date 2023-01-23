@@ -1,10 +1,14 @@
+import { NavLink } from "react-router-dom";
+import Button from 'react-bootstrap/Button'
+
+
 // Transfer to the profile page where users 10 prior translations are displayed
 const TranslationsButton = () => {
     return (
         <>
-            <button onClick={() => console.log("send to API")}>
-                <b>Translations</b>
-            </button>
+            <Button variant="Secondary">
+                <NavLink className="nav-link bold text-light" to="/profile">Translations</NavLink>
+            </Button>
         </>
     )
 }
@@ -12,30 +16,20 @@ const TranslationsButton = () => {
 // Translates the user inputs
 // Render the the translated massage that the user inputs
 // in the TranslationsForm 
-const TranslateWordToSigns = (word) => {
-    // TODO: Replace this array with folder  
+const TranslateWordToSigns = ({word}) => { 
+    let listOfChars = word.replace(/[^A-Z]+/ig, "").split("");
 
-    let listOfSignImgs = ["x.png", "y.png", "w.png", "z.png"];
-    let selectedSignImgs = []
-    // TODO: loop over the sign images in img folder!
-    for (const char of word.word) {
-        for (const img of listOfSignImgs) {
-            // TODO: Add function to lower and 
-            if (char === img[0]) selectedSignImgs.push(img);
-        }
-    }
     return (
         <>
             <div>
-                {selectedSignImgs.map((sign) => (
-                    <img src={`img/${sign}`} alt={"sign"} width="55" />))}
+                {listOfChars.map((char) => (
+                    <img src={`img/${char}.png`} alt={"sign"} key={`${char}${Math.random()}`} width="55" />))}
             </div>
         </>
     );
 }
 
 const translationWindow = () => {
-    // TODO:  on translateForm button
     return (
         <>
             <div className="container pt-5">
@@ -44,8 +38,8 @@ const translationWindow = () => {
                         <div className="card">
                             <div className="card-body">
                                 <div className="container-xl primary">
-                                    <div className="signs">
-                                        {<TranslateWordToSigns word="xy,,,,ezw" />}
+                                    <div className="char">
+                                        {<TranslateWordToSigns word="3453g123efeg" />}
                                     </div>
                                     <TranslationsButton />
 
