@@ -3,6 +3,7 @@ import { useUser } from "../../context/UserContext";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Dropdown from 'react-bootstrap/Dropdown'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { STORAGE_KEY_USER } from "../../const/StorageKeys";
 import { storageDelete } from "../../utils/storage";
@@ -29,10 +30,15 @@ const NavigationBar = () => {
                         user !== null &&
                         <Nav className="ms-auto">
                             <NavLink className="nav-link" to="/translation">Translations</NavLink>
-                            <NavDropdown title={<i className="bi bi-person-circle"> {user.username} </i>}>
-                                <NavLink className="nav-link text-dark dd-item" to="/profile">Profile</NavLink>
-                                <NavLink className="nav-link text-dark dd-item" onClick={handleLogoutClick}>Log Out</NavLink>
-                            </NavDropdown>
+                            <Dropdown>
+                                <Dropdown.Toggle className="btn btn-dark" id="dropdown-basic">{user.username}&nbsp;&nbsp;
+                                    <i className="bi bi-person-circle"></i>
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu variant="dark">
+                                    <Dropdown.Item><NavLink className="nav-link dd-item" to="/profile">Profile</NavLink></Dropdown.Item>
+                                    <Dropdown.Item><NavLink className="nav-link dd-item" onClick={handleLogoutClick}>Log Out</NavLink></Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </Nav>
                     }
                 </Navbar.Collapse>
