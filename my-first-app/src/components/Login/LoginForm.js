@@ -32,9 +32,9 @@ const LoginForm = () => {
 
     // Event Handlers
     const onSubmit = async ({ username }) => {
-
+        username = username.charAt(0).toUpperCase() + username.slice(1);
         setLoading(true);
-        const [error, userResponse] = await loginUser(username)
+        const [error, userResponse] = await loginUser(username);
         if (error !== null) {
             setApiError(error)
         }
