@@ -31,10 +31,10 @@ const NavigationBar = () => {
                         <Nav className="ms-auto">
                             <NavLink className="nav-link" to="/translation">Translations</NavLink>
                             <Dropdown>
-                                <Dropdown.Toggle className="btn btn-dark" id="dropdown-basic">{user.username}&nbsp;&nbsp;
+                                <Dropdown.Toggle className="btn btn-dropdown bg-transparent border-0" id="dropdown-basic">{user.username}&nbsp;&nbsp;
                                     <i className="bi bi-person-circle"></i>
                                 </Dropdown.Toggle>
-                                <Dropdown.Menu variant="dark">
+                                <Dropdown.Menu variant="dark" className="text-center">
                                     <Dropdown.Item><NavLink className="nav-link dd-item" to="/profile">Profile</NavLink></Dropdown.Item>
                                     <Dropdown.Item><NavLink className="nav-link dd-item" onClick={handleLogoutClick}>Log Out</NavLink></Dropdown.Item>
                                 </Dropdown.Menu>

@@ -67,7 +67,7 @@ const LoginForm = () => {
                         placeholder="What's your name?"
                         {...register("username", usernameConfig)} />
                     <div className="input-group-append">
-                        <button className="btn fw-bold" type="submit" disabled={loading}><i className="bi bi-caret-right-fill"></i>
+                        <button className="btn btn-login fw-bold" type="submit" disabled={loading}><i className="bi bi-caret-right-fill"></i>
                         </button>
                     </div>
                 </div>
