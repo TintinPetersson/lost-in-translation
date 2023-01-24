@@ -1,25 +1,24 @@
+import { useRef, useState } from "react";
+import { useForm } from "react-hook-form";
 // Send the translation message that the user have inputted 
 // in to the TranslationForm to our Glitch API and the to 
 // the TranslationsWindow to display translation
-const translationForm = ( { message, setMessage } ) => {
-    // TODO: handle state that is defined in translations
-    const handleMessage = () => {
-        //event.preventDefault();
-        console.log("value: ", message);
-        let newValue = "fefe"
-        setMessage(newValue);
+const TranslationForm = ({ setMessage }) => {
+    const { register, handleSubmit, reset} = useForm();
+    const handleMessage = event => {
+        setMessage(event.message)
+        // Send to message API 
+        reset();
     }
-
-    // TODO: set message with button below
     return (
         <>
-            <form onSubmit={() => handleMessage(message)}>
+            <form onSubmit={handleSubmit(handleMessage)}>
                 <div className="input-group pb-5">
                     <input
                         className="form-control fw-bold"
                         type="text"
-                        placeholder="Enter text massage here: " 
-                        />
+                        placeholder="Hello?"
+                        {...register("message")} />
                     <button className="btn fw-bold" type="submit">
                         <i className="bi bi-caret-right-fill"></i></button>
                 </div>
@@ -28,4 +27,4 @@ const translationForm = ( { message, setMessage } ) => {
     )
 }
 
-export default translationForm
+export default TranslationForm
