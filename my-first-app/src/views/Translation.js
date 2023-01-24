@@ -5,12 +5,12 @@ import { useState } from "react";
 
 
 const Translation = () => {
-    const [ message, setMessage ] = useState("filip");
+    const [ message, setMessage ] = useState("Hello");
     return (
         <>
             <h1>Translation page</h1>
             <section id="translations-options">
-                <TranslationForm  message = {message} setMessage = {setMessage} />
+                <TranslationForm  setMessage = {setMessage} />
                 <TranslationWindow message = {message} />
             </section>
         </>
