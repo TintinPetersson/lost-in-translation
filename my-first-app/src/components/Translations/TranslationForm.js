@@ -1,13 +1,24 @@
-import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useUser } from "../../context/UserContext";
+import { translationAdd } from "../../api/User"
 // Send the translation message that the user have inputted 
 // in to the TranslationForm to our Glitch API and the to 
 // the TranslationsWindow to display translation
 const TranslationForm = ({ setMessage }) => {
-    const { register, handleSubmit, reset} = useForm();
-    const handleMessage = event => {
+
+    const { user } = useUser();
+
+    const { register, handleSubmit, reset } = useForm();
+
+    const handleMessage = async (event) => {
         setMessage(event.message)
         // Send to message API 
+        if (event.message === "") {
+            alert("Only letters please!")
+            return;
+        }
+        const [error, result] = await translationAdd(user, event.message);
+
         reset();
     }
     return (
