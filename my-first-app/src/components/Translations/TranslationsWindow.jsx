@@ -30,7 +30,8 @@ const TranslateWordToSigns = ({word}) => {
     );
 }
 
-const translationWindow = ({message}) => {
+const translationWindow = ({ message}) => {
+
     return (
         <>
             <div className="container pt-5">
