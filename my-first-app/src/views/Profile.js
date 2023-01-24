@@ -9,12 +9,13 @@ const Profile = () => {
     const { user } = useUser()
 
     return (
-        <>
-            <h1>Profile page</h1>
-            <ProfileHeader username={user.username} />
-            <ProfileAction />
-            <ProfileTranslationHistory translations={user.translations} />
-        </>
+        <div className="container">
+            <div className="row justify-content-center">
+                <ProfileHeader username={user.username} />
+                <ProfileTranslationHistory translations={user.translations} />
+                <ProfileAction />
+            </div>
+        </div>
     )
 }
 
