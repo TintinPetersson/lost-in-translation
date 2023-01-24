@@ -15,6 +15,11 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+         <div className="robot-image">
+         <img src='img/Logo-Hello.png'
+             className='img-fluid imgs'
+             alt='robot' />
+        </div>
         </div>
     )
 }
