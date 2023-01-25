@@ -1,4 +1,4 @@
-import LoginForm from "../components/Login/LoginForm"
+import LoginForm from "./LoginForm"
 
 
 const Login = () => {
@@ -15,11 +15,11 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-         <div className="robot-image">
-         <img src='img/Logo-Hello.png'
-             className='img-fluid imgs'
-             alt='robot' />
-        </div>
+            <div className="robot-image">
+                <img src='img/Logo-Hello.png'
+                    className='img-fluid imgs'
+                    alt='robot' />
+            </div>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import { translationClearHistory } from "../../api/User"
 import { storageSave } from "../../utils/storage"
-import { useUser } from '../../context/UserContext'
-import { STORAGE_KEY_USER } from "../../const/StorageKeys"
+import { useUser } from "../context/UserContext"
+import { STORAGE_KEY_USER } from "../../utils/StorageKeys"
 
 const ProfileAction = () => {
 
