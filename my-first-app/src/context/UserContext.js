@@ -12,10 +12,7 @@ const UserProvider = ({ children }) => {
     // magic strings or number is string and numbers that have no mening!
     const [user, setUser] = useState(storageRead(STORAGE_KEY_USER));
     const state = { user, setUser }
-    
-    // handle the massage state!
-    const [ userMassage, setUserMessage ] = useState("");
-    const userMassageState = { userMassage, setUserMessage }
+
     return (
         <UserContext.Provider value={state}>
             {children}

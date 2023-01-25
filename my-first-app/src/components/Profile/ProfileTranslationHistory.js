@@ -9,10 +9,10 @@ const ProfileTranslationHistory = ({ translations }) => {
     return (
         <div className="col-md-4">
             {!translations.length > 0 &&
-                <p className="pt-5"><span className="p-2 rounded fst-italic bg-dark">No earlier translations</span></p>
+                <p className="pt-3"><span className="p-2 rounded bg-dark">No earlier translations</span></p>
             }
             {translations.length > 0 &&
-                <p className="pt-5"><span className="p-2 rounded fst-italic bg-dark">Your translation history</span></p>
+                <p className="pt-3"><span className="p-2 rounded bg-dark">Your translation history</span></p>
             }
             <ul className="list-group list-group pt-4 pb-5">
                 {translationList}

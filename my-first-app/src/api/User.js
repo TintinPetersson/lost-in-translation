@@ -61,6 +61,10 @@ export const loginUser = async (username) => {
 }
 
 export const translationAdd = async (user, translation) => {
+
+    if (user.translations.length >= 10) {
+        user.translations.shift()
+    }
     try {
         const response = await fetch(`${apiUrl}/${user.id}`, {
             method: "PATCH",
@@ -83,6 +87,36 @@ export const translationAdd = async (user, translation) => {
 
 }
 
-export const translationClear = async (userId) => {
+export const translationClearHistory = async (userId) => {
+    try {
+        const response = await fetch(`${apiUrl}/${userId}`, {
+            method: "PATCH",
+            headers: createHeaders(),
+            body: JSON.stringify({
+                translations: []
+            })
+        })
+        const result = await response.json()
+        if (!response.ok) {
+            throw new Error("Could not update translations.")
+        }
+        return [null, result]
 
+    } catch (error) {
+        return [error.message, null]
+    }
+}
+
+export const findUserById = async (userId) => {
+    try {
+        const response = await fetch(`${apiUrl}/${userId}`)
+        if (!response.ok) {
+            throw new Error("Could not fet user")
+        }
+        const user = await response.json()
+        return [null, user]
+
+    } catch (error) {
+        return [error.message, null]
+    }
 }
