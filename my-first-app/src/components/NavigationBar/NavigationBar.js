@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -34,8 +34,8 @@ const NavigationBar = () => {
                                     <i className="bi bi-person-circle"></i>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu variant="dark" className="text-center">
-                                    <Dropdown.Item><NavLink className="nav-link dd-item" to="/profile">Profile</NavLink></Dropdown.Item>
-                                    <Dropdown.Item><NavLink className="nav-link dd-item" onClick={handleLogoutClick}>Log Out</NavLink></Dropdown.Item>
+                                    <Dropdown.Item as={Link} className="nav-link dd-item" to="/profile">Profile</Dropdown.Item>
+                                    <Dropdown.Item as={Link} className="nav-link dd-item" onClick={handleLogoutClick}>Log Out</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Nav>

@@ -1,12 +1,14 @@
 import { useForm } from "react-hook-form";
 import { useUser } from "../../context/UserContext";
 import { translationAdd } from "../../api/User"
+import { storageSave } from "../../utils/storage";
+import { STORAGE_KEY_USER } from "../../const/StorageKeys";
 
 // Send the translation message that the user have inputted 
 // in to the TranslationForm to our Glitch API and the to 
 // the TranslationsWindow to display translation
 const TranslationForm = ({ setMessage }) => {
-    const { user } = useUser();
+    const { user, setUser } = useUser();
     const { register, handleSubmit, reset } = useForm();
 
     const handleMessage = async (event) => {
@@ -16,9 +18,18 @@ const TranslationForm = ({ setMessage }) => {
             alert("Only letters please!")
             return;
         }
-        await translationAdd(user, event.message);
+        const [error, updatedUser] = await translationAdd(user, event.message);
 
-        // Resets the form placeholder text and value!
+        if (error !== null) {
+            return
+        }
+
+        // Keep UI state and server state in sync.
+        storageSave(STORAGE_KEY_USER, updatedUser)
+        // Update context state.
+        setUser(updatedUser)
+
+        // Resets the form placeholder text and value.
         reset();
     }
     return (
