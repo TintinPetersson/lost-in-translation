@@ -2,10 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@400;800&display=swap');
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #34373D;
+}
+
 .App {
   text-align: center;
   color: white;
-  font-family: 'Stick No Bills', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #34373D;
 }
 
 .btn-login{
@@ -32,16 +39,16 @@
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.card input{
-  background-color: #43474D;
+.card input, #translation-input{
+  background-color:  #282c34;
   border: none;
   color: white;
   border-radius: 20px; 
   transition: ease-in-out .2s;
 }
 
-.card input:focus{
-  background-color: #282c34;
+.card input:focus, #translation-input:focus{
+  background-color: #43474D;
   border:none;
   color: white;
   outline: none;
@@ -78,8 +85,13 @@
 }
 
 .navbar-brand {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
+  font-family: 'Stick No Bills', sans-serif;
+}
+
+#brand-logo{
+  transform: rotate(20deg);
 }
 
 .robot-image {
@@ -94,6 +106,12 @@
   transform:rotate(-5deg);
 }
 
-.form {
-  padding: 3rem;
+.translation-header{
+  font-size: 32px;
+  font-family: 'Pacifico', sans-serif;
+}
+
+.form-control:focus {
+  border-color: orange;
+  box-shadow: none;
 }

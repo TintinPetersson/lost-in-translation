@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import NavigationBar from './components/NavigationBar/NavigationBar';
-import Login from './views/Login.js'
-import Profile from './views/Profile';
-import Translation from './views/Translation';
+import NavigationBar from './components/Translations/NavigationBar/NavigationBar';
+import Login from '../src/components/Login/Login'
+import Profile from './components/Profile/Profile';
+import Translation from './components/Translations/Translation';
 
 function App() {
 

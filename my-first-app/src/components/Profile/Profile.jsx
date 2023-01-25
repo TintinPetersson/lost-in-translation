@@ -1,12 +1,11 @@
 import { useEffect } from "react"
-import { findUserById } from "../api/User"
-import ProfileAction from "../components/Profile/ProfileActions"
-import ProfileHeader from "../components/Profile/ProfileHeader"
-import ProfileTranslationHistory from "../components/Profile/ProfileTranslationHistory"
-import { STORAGE_KEY_USER } from "../const/StorageKeys"
+import { findUserById } from "../../api/User"
+import ProfileClearHistory from "./ProfileClearHistory"
+import ProfileTranslationHistory from "./ProfileTranslationHistory"
+import { STORAGE_KEY_USER } from "../../utils/StorageKeys"
 import { useUser } from "../context/UserContext"
-import withAuth from "../hoc/withAuth"
-import { storageSave } from "../utils/storage"
+import withAuth from "../../utils/withAuth"
+import { storageSave } from "../../utils/storage"
 
 const Profile = () => {
 
@@ -27,9 +26,9 @@ const Profile = () => {
     return (
         <div className="container">
             <div className="row justify-content-center">
-                <ProfileHeader username={user.username} />
+            <h2 className="fw-bolder pt-5 mt-3">Hello there.<br></br> Welcome back <span className="text-warning">{user.username}!</span></h2>
                 <ProfileTranslationHistory translations={user.translations} />
-                <ProfileAction />
+                <ProfileClearHistory />
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useUser } from "../context/UserContext";
+import { useUser } from "../components/context/UserContext"
 
 const withAuth = Component => props => {
     const { user } = useUser()

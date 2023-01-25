@@ -1,10 +1,8 @@
-import ProfileTranslationHistoryItem from "./ProfileTranslationHistoryItem"
-
 const ProfileTranslationHistory = ({ translations }) => {
 
 
     const translationList = translations.map(
-        (translation, index) => <ProfileTranslationHistoryItem key={index + "-" + translation} translation={translation} />)
+        (translation) => <li className="list-group-item bg-dark text-light m-1 rounded fst-italic" key={`${Math.random()}`}>{translation}</li>)
 
     return (
         <div className="col-md-4">

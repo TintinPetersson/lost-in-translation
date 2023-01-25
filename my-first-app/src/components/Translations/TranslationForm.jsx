@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
-import { useUser } from "../../context/UserContext";
+import { useUser } from "../context/UserContext"
 import { translationAdd } from "../../api/User"
 import { storageSave } from "../../utils/storage";
-import { STORAGE_KEY_USER } from "../../const/StorageKeys";
+import { STORAGE_KEY_USER } from "../../utils/StorageKeys";
 
 // Send the translation message that the user have inputted 
 // in to the TranslationForm to our Glitch API and the to 
@@ -35,8 +35,9 @@ const TranslationForm = ({ setMessage }) => {
     return (
         <>
             <form onSubmit={handleSubmit(handleMessage)}>
-                <div className="input-group pb-5 form">
+                <div className="input-group">
                     <input
+                        id="translation-input"
                         className="form-control fw-bold"
                         type="text"
                         placeholder="Hello?"

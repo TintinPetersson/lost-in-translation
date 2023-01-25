@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 
 
 // Transfer to the profile page where users 10 prior translations are displayed
-const TranslationsButton = ( {message}) => {
+const TranslationsButton = ({ message }) => {
     return (
         <>
             <Button variant="Secondary">
@@ -13,11 +13,10 @@ const TranslationsButton = ( {message}) => {
     )
 }
 
-
 // Translates the user inputs
 // Render the the translated massage that the user inputs
 // in the TranslationsForm 
-const TranslateWordToSigns = ({word}) => { 
+const TranslateWordToSigns = ({ word }) => {
     let listOfChars = word.replace(/[^A-Z]+/ig, "").split("");
 
     return (
@@ -30,28 +29,25 @@ const TranslateWordToSigns = ({word}) => {
     );
 }
 
-const translationWindow = ({ message}) => {
+const translationWindow = ({ message }) => {
 
     return (
-        <>
-            <div className="container pt-5">
-                <div className="row justify-content-center text-center pt-5">
-                    <div className="col-md-12 pt-1">
-                        <div className="card">
-                            <div className="card-body">
-                                <div className="container-xl primary">
-                                    <div className="char">
-                                        {<TranslateWordToSigns word={message} />}
-                                    </div>
-                                    <TranslationsButton />
-
+        <div className="container pt-5">
+            <div className="row justify-content-center text-center pt-5">
+                <div className="col-md-12 pt-1">
+                    <div className="card">
+                        <div className="card-body">
+                            <div className="container-xl primary">
+                                <div className="char">
+                                    {<TranslateWordToSigns word={message} />}
                                 </div>
+                                <TranslationsButton />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
