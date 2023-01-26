@@ -17,7 +17,7 @@ const TranslationsButton = ({ message }) => {
 // Render the the translated massage that the user inputs
 // in the TranslationsForm 
 const TranslateWordToSigns = ({ word }) => {
-    let listOfChars = word.replace(/[^A-Z]+/ig, "").split("");
+    const listOfChars = word.replace(/[^A-Z]+/ig, "").split("");
 
     return (
         <>
