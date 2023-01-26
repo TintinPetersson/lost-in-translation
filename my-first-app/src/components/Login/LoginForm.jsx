@@ -62,14 +62,14 @@ const LoginForm = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-group pb-5">
                     <input
-                        className="form-control fw-bold"
+                        className="search-input form-control fw-bold rounded-pill"
                         type="text"
                         placeholder="What's your name?"
                         {...register("username", usernameConfig)} />
-                    <div className="input-group-append">
-                        <button className="btn btn-login fw-bold" type="submit" disabled={loading}><i className="bi bi-caret-right-fill"></i>
-                        </button>
-                    </div>
+                    <button className="btn fw-bold" type="submit" disabled={loading}>
+                        <i className="bi bi-caret-right-fill"></i>
+                    </button>
+
                 </div>
                 {errorMessage}
 

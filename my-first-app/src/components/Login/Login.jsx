@@ -4,7 +4,7 @@ import LoginForm from "./LoginForm"
 const Login = () => {
 
     return (
-        <div className="container pt-5">
+        <div className="container">
             <div className="row justify-content-center text-center pt-5">
                 <div className="col-md-4 pt-5">
                     <div className="card">

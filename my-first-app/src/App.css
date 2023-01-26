@@ -15,18 +15,6 @@ body {
   background-color: #34373D;
 }
 
-.btn-login{
-  background-color: #282c34;
-  border: 1px solid black;
-  transition: ease-in-out .3s;
-}
-.btn-login:hover{
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-  letter-spacing: 3px;
-}
-
 .btn-dropdown{
   padding-top: 8px;
   margin-left: 40px;
@@ -39,7 +27,7 @@ body {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.card input, #translation-input{
+.search-input{
   background-color:  #282c34;
   border: none;
   color: white;
@@ -47,7 +35,7 @@ body {
   transition: ease-in-out .2s;
 }
 
-.card input:focus, #translation-input:focus{
+.search-input:focus{
   background-color: #43474D;
   border:none;
   color: white;
@@ -114,4 +102,8 @@ body {
 .form-control:focus {
   border-color: orange;
   box-shadow: none;
+}
+
+#link-profile:hover{
+  color: whitesmoke;
 }

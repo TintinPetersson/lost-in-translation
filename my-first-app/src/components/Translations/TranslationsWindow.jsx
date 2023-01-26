@@ -1,18 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Button from 'react-bootstrap/Button'
 
-
-// Transfer to the profile page where users 10 prior translations are displayed
-const TranslationsButton = ({ message }) => {
-    return (
-        <>
-            <Button variant="Secondary">
-                <NavLink className="nav-link bold text-light" to="/profile">Translations</NavLink>
-            </Button>
-        </>
-    )
-}
-
 // Translates the user inputs
 // Render the the translated massage that the user inputs
 // in the TranslationsForm 
@@ -38,10 +26,15 @@ const translationWindow = ({ message }) => {
                     <div className="card">
                         <div className="card-body">
                             <div className="container-xl primary">
+                                <div className="fw-bolder text-muted pb-3 pt-2">
+                                    <span>"{message}"</span>
+                                </div>
                                 <div className="char">
                                     {<TranslateWordToSigns word={message} />}
                                 </div>
-                                <TranslationsButton />
+                                <Button variant="Secondary pt-5 text-muted">
+                                    <NavLink id="link-profile" className="nav-link bg-dark p-1 rounded" to="/profile">Go to Translations</NavLink>
+                                </Button>
                             </div>
                         </div>
                     </div>

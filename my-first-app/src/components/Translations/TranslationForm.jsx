@@ -37,13 +37,13 @@ const TranslationForm = ({ setMessage }) => {
             <form onSubmit={handleSubmit(handleMessage)}>
                 <div className="input-group">
                     <input
-                        id="translation-input"
-                        className="form-control fw-bold"
+                        className="search-input form-control fw-bold rounded-pill"
                         type="text"
-                        placeholder="Hello?"
+                        placeholder="Hello"
                         {...register("message")} />
                     <button className="btn fw-bold" type="submit">
-                        <i className="bi bi-caret-right-fill"></i></button>
+                        <i className="bi bi-caret-right-fill"></i>
+                    </button>
                 </div>
             </form>
         </>
