@@ -1,12 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
-import { useUser } from "../context/UserContext"
+import { useUser } from "../../context/UserContext"
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Dropdown from 'react-bootstrap/Dropdown'
-import { STORAGE_KEY_USER } from "../../utils/StorageKeys";
+import { STORAGE_KEY_USER } from "../../utils/storageKeys";
 import { storageDelete } from "../../utils/storage";
-
 
 const NavigationBar = () => {
 

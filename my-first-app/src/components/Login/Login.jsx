@@ -1,6 +1,5 @@
 import LoginForm from "./LoginForm"
 
-// Login from component
 const Login = () => {
     return (
         <div className="container">

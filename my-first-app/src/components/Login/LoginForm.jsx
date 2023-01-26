@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form';
 import { loginUser } from '../../api/User'
 import { storageSave } from '../../utils/storage';
 import { useNavigate } from 'react-router-dom'
-import { useUser } from '../context/UserContext'
-import { STORAGE_KEY_USER } from '../../utils/StorageKeys';
+import { useUser } from '../../context/UserContext'
+import { STORAGE_KEY_USER } from '../../utils/storageKeys';
 
 // Username validation rules
 const usernameConfig = {
@@ -12,25 +12,21 @@ const usernameConfig = {
     minLength: 2
 }
 
-// User login logic 
 const LoginForm = () => {
-    //Hooks
+   
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { user, setUser } = useUser()
     const navigate = useNavigate()
 
-    // Local state
     const [loading, setLoading] = useState(false)
     const [apiError, setApiError] = useState(null)
 
-    // Side Effects
     useEffect(() => {
         if (user !== null) {
             navigate("translation")
         }
     }, [user, navigate])
 
-    // Event Handlers
     const onSubmit = async ({ username }) => {
         username = username.charAt(0).toUpperCase() + username.slice(1);
         setLoading(true);
@@ -45,7 +41,6 @@ const LoginForm = () => {
         setLoading(false);
     }
 
-    // Displays a message if user input is invalid
     const errorMessage = (() => {
         if (!errors.username) {
             return null;
@@ -72,7 +67,6 @@ const LoginForm = () => {
 
                 </div>
                 {errorMessage}
-
                 {loading && <p>Logging in...</p>}
                 {apiError && <p>{apiError}</p>}
             </form>

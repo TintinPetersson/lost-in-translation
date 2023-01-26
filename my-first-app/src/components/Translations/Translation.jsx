@@ -5,9 +5,9 @@ import { useState } from "react";
 import { Typewriter } from 'react-simple-typewriter'
 
 const Translation = () => {
+
     const [message, setMessage] = useState("hello");
-
-
+    
     return (
         <div className="container pt-5">
             <h4 className="fw-bolder fst-italic translation-header">
