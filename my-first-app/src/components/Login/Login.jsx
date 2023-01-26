@@ -1,8 +1,7 @@
 import LoginForm from "./LoginForm"
 
-
+// Login from component
 const Login = () => {
-
     return (
         <div className="container">
             <div className="row justify-content-center text-center pt-5">
