@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Typewriter } from 'react-simple-typewriter'
 
 const Translation = () => {
-    const [message, setMessage] = useState("Hello");
+    const [message, setMessage] = useState("hello");
 
 
     return (
