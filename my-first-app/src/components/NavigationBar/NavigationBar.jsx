@@ -22,7 +22,7 @@ const NavigationBar = () => {
     return (
         <Navbar id="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand id="brand">Lost in Translation<img className="pb-3" id="brand-logo" src="img/Logo.png" width="45" /></Navbar.Brand>
+                <Navbar.Brand id="brand">Lost in Translation<img className="pb-3" id="brand-logo" src="img/Logo.png" alt="" width="45" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     {
