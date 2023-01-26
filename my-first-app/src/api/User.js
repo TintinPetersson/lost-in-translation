@@ -1,9 +1,6 @@
 import { createHeaders } from "./ApiIndex";
 const apiUrl = process.env.REACT_APP_API_URL;
 
-
-// function check if the user exist in the API, the function returns
-// the users data if user exist and null otherwise
 export const checkForUser = async (username) => {
     try {
         const response = await fetch(`${apiUrl}?username=${username}`);
@@ -20,8 +17,6 @@ export const checkForUser = async (username) => {
 
 }
 
-
-// function adds user to api
 export const createUser = async (username) => {
     try {
         const response = await fetch(apiUrl, {
@@ -44,9 +39,8 @@ export const createUser = async (username) => {
     }
 }
 
-// handles the logic for user login
 export const loginUser = async (username) => {
-    // Check if user does exist
+    
     const [checkError, user] = await checkForUser(username);
 
     if (checkError !== null) {
@@ -60,10 +54,8 @@ export const loginUser = async (username) => {
     return await createUser(username);
 }
 
-// Adds new translations to the API and removes the oldest translation form the API if  
-// user enter more then 10 translations
 export const translationAdd = async (user, translation) => {
-
+    
     if (user.translations.length >= 10) {
         user.translations.shift()
     }
@@ -89,7 +81,6 @@ export const translationAdd = async (user, translation) => {
 
 }
 
-// Removes all translations stored on a user in the API
 export const translationClearHistory = async (userId) => {
     try {
         const response = await fetch(`${apiUrl}/${userId}`, {
@@ -110,7 +101,6 @@ export const translationClearHistory = async (userId) => {
     }
 }
 
-// Gets a specific user from the API based on the user ID
 export const findUserById = async (userId) => {
     try {
         const response = await fetch(`${apiUrl}/${userId}`)

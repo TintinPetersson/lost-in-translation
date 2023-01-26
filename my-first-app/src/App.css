@@ -15,29 +15,29 @@ body {
   background-color: #34373D;
 }
 
-.btn-dropdown{
+.btn-dropdown {
   padding-top: 8px;
   margin-left: 40px;
 }
 
-.card{
+.card {
   background-color: #34373D;
   border-top: 4px solid #FFB800;
   color: white;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.search-input{
-  background-color:  #282c34;
+.search-input {
+  background-color: #282c34;
   border: none;
   color: white;
-  border-radius: 20px; 
+  border-radius: 20px;
   transition: ease-in-out .2s;
 }
 
-.search-input:focus{
+.search-input:focus {
   background-color: #43474D;
-  border:none;
+  border: none;
   color: white;
   outline: none;
 }
@@ -50,24 +50,26 @@ body {
 .input-group {
   position: relative;
 }
-.input-group .btn{
+
+.input-group .btn {
   position: absolute;
   right: 0;
   top: 0;
   z-index: 200;
 }
 
-#navbar{
+#navbar {
   background-color: #34373D !important;
   border-bottom: 2px solid #FFB800
 }
 
-.nav-link, #dropdown-basic{
+.nav-link,
+#dropdown-basic {
   font-weight: 700;
   font-size: 18px;
 }
 
-.dd-item{
+.dd-item {
   font-size: 14px !important;
   font-weight: 600;
 }
@@ -78,7 +80,7 @@ body {
   font-family: 'Stick No Bills', sans-serif;
 }
 
-#brand-logo{
+#brand-logo {
   transform: rotate(20deg);
 }
 
@@ -91,10 +93,10 @@ body {
 
 .robot-image .imgs {
   scale: 0.7;
-  transform:rotate(-5deg);
+  transform: rotate(-5deg);
 }
 
-.translation-header{
+.translation-header {
   font-size: 32px;
   font-family: 'Pacifico', sans-serif;
 }
@@ -104,6 +106,6 @@ body {
   box-shadow: none;
 }
 
-#link-profile:hover{
+#link-profile:hover {
   color: whitesmoke;
 }

@@ -1,23 +1,19 @@
 import { NavLink } from "react-router-dom";
 import Button from 'react-bootstrap/Button'
 
-// Translates the user inputs
-// Render the the translated massage that the user inputs
-// in the TranslationsForm 
 const TranslateWordToSigns = ({ word }) => {
+
     const listOfChars = word.replace(/[^A-Z]+/ig, "").split("");
 
     return (
-        <>
-            <div>
-                {listOfChars.map((char) => (
-                    <img src={`img/${char}.png`} alt={"sign"} key={`${char}${Math.random()}`} width="55" />))}
-            </div>
-        </>
+        <div>
+            {listOfChars.map((char) => (
+                <img src={`img/${char}.png`} alt={"sign"} key={`${char}${Math.random()}`} width="55" />))}
+        </div>
     );
 }
 
-const translationWindow = ({ message }) => {
+const TranslationWindow = ({ message }) => {
 
     return (
         <div className="container pt-5">
@@ -44,4 +40,4 @@ const translationWindow = ({ message }) => {
     )
 }
 
-export default translationWindow
+export default TranslationWindow
