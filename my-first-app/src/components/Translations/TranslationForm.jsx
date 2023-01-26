@@ -39,7 +39,7 @@ const TranslationForm = ({ setMessage }) => {
                     <input
                         className="search-input form-control fw-bold rounded-pill"
                         type="text"
-                        placeholder="Hello"
+                        placeholder="hello"
                         {...register("message")} />
                     <button className="btn fw-bold" type="submit">
                         <i className="bi bi-caret-right-fill"></i>
