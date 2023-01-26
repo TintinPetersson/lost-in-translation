@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 
 const TranslateWordToSigns = ({ word }) => {
 
-    const listOfChars = word.replace(/[^A-Z]+/ig, "").split("");
+    const listOfChars = word.replace(/[^A-Z]+/ig, "").toLowerCase().split("");
 
     return (
         <div>
