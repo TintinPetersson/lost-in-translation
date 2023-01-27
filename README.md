@@ -1,5 +1,10 @@
 # Lost in Translation
 
+### Link to Vercel app: https://signtranslation.vercel.app/
+
+### Link to component tree in figma: https://www.figma.com/file/9EjnVsSgd4dzknlmvq3ZvT/Component-Tree?t=AvZTUq7yUYEgWxM1-0
+
+
 !! Do not forget to use "cd my-first-app" before "npm start" !!
 
 
